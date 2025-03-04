@@ -1,16 +1,17 @@
 <template>
-  <div id="container">
-    <h1>
-      Virgin Vue
-    </h1>
-
-    <p class="message">{{ message }}</p>
-    <button @click="changeMessage">Cambiar Mensaje</button>
+  <div>
+    <Player />
   </div>
 </template>
 
+
 <script>
+import Player from '@/components/player.vue';
+
 export default {
+  components: {
+    Player
+  },
   data() {
     return {
       message: "Este es un mensaje dentro del componente."
@@ -23,6 +24,7 @@ export default {
   }
 }
 </script>
+
 
 <style scoped>
 
@@ -38,6 +40,10 @@ export default {
 
 #container .message {
   color: red;
+}
+
+#extra{
+  display: none;
 }
 
 @media only screen and (max-width: 480px) {
